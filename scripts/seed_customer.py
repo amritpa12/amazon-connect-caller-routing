@@ -11,13 +11,13 @@ customers = [
         "phoneNumber": "+16305202420",
         "customerType": "VIP",
         "customerName": "Amritpal Rajput",
-        "accountNumber": "A10001"
+        "accountNumber": "100001"
     },
     {
         "phoneNumber": "+15559876543",
         "customerType": "KNOWN",
         "customerName": "Marcus Lee",
-        "accountNumber": "A10002"
+        "accountNumber": "100002"
     }
 ]
 
