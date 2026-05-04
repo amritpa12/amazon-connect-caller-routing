@@ -1,0 +1,606 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "Intial Greeting",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -258.4,
+      "y": 500
+    },
+    "ActionMetadata": {
+      "Set VIP Route": {
+        "position": {
+          "x": 701.6,
+          "y": 151.2
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "Log VIP Call": {
+        "position": {
+          "x": 916.8,
+          "y": 151.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "connect-caller-routing-call-logger"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "Set Known Route": {
+        "position": {
+          "x": 697.6,
+          "y": 347.2
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "Log Known Call": {
+        "position": {
+          "x": 916.8,
+          "y": 349.6
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "connect-caller-routing-call-logger"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "VIP Greeting": {
+        "position": {
+          "x": 456.8,
+          "y": 152.8
+        },
+        "isFriendlyName": true
+      },
+      "Known Greeting": {
+        "position": {
+          "x": 472.8,
+          "y": 349.6
+        },
+        "isFriendlyName": true
+      },
+      "Route based": {
+        "position": {
+          "x": 137.6,
+          "y": 172.8
+        },
+        "isFriendlyName": true,
+        "conditionMetadata": [
+          {
+            "id": "3d557f3b-6821-4dcc-91a2-3984ed772d6b",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "VIP"
+          },
+          {
+            "id": "1c09a844-db4d-4363-87b5-b6c36afb9eeb",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "KNOWN"
+          },
+          {
+            "id": "b76db285-fb30-4d99-bccd-4c4901fa72a6",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "UNKNOWN"
+          }
+        ]
+      },
+      "Get Account Number": {
+        "position": {
+          "x": 480,
+          "y": 554.4
+        },
+        "isFriendlyName": true,
+        "conditionMetadata": [
+          {
+            "id": "eb4936f2-7076-43a2-a6a8-7f49a4dedde6",
+            "value": "1"
+          }
+        ]
+      },
+      "Log Unknown Call": {
+        "position": {
+          "x": 872,
+          "y": 868.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "connect-caller-routing-call-logger"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "Set Unknown Route": {
+        "position": {
+          "x": 724.8,
+          "y": 593.6
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "VIP Simulated Queue": {
+        "position": {
+          "x": 1142.4,
+          "y": 155.2
+        },
+        "isFriendlyName": true
+      },
+      "Known Simulated Queue": {
+        "position": {
+          "x": 1139.2,
+          "y": 352.8
+        },
+        "isFriendlyName": true
+      },
+      "Fallback Simiulated Queue": {
+        "position": {
+          "x": 1199.2,
+          "y": 800
+        },
+        "isFriendlyName": true
+      },
+      "ec8f8fe3-f750-4acf-bd2d-d069bae61330": {
+        "position": {
+          "x": 1431.2,
+          "y": 608
+        }
+      },
+      "Store Customer Info": {
+        "position": {
+          "x": 151.2,
+          "y": 592.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "customerType": {
+              "useDynamic": true
+            },
+            "customerName": {
+              "useDynamic": true
+            },
+            "lookupStatus": {
+              "useDynamic": true
+            },
+            "phoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "customerType",
+          "customerName",
+          "lookupStatus",
+          "phoneNumber"
+        ]
+      },
+      "Set Fallback": {
+        "position": {
+          "x": 439.2,
+          "y": 882.4
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "Customer Lookup": {
+        "position": {
+          "x": -98.4,
+          "y": 672.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "connect-caller-routing-customer-lookup"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "Intial Greeting": {
+        "position": {
+          "x": -108.8,
+          "y": 376.8
+        },
+        "isFriendlyName": true
+      }
+    },
+    "Annotations": [],
+    "name": "InboundCallerRoutingFlow",
+    "description": "",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "Attributes": {
+          "route": "VIP"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set VIP Route",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Log VIP Call",
+        "Errors": [
+          {
+            "NextAction": "Log VIP Call",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:651706765112:function:connect-caller-routing-call-logger",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Log VIP Call",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "VIP Simulated Queue",
+        "Errors": [
+          {
+            "NextAction": "VIP Simulated Queue",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "route": "STANDARD"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set Known Route",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Log Known Call",
+        "Errors": [
+          {
+            "NextAction": "Log Known Call",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:651706765112:function:connect-caller-routing-call-logger",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Log Known Call",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "Known Simulated Queue",
+        "Errors": [
+          {
+            "NextAction": "Known Simulated Queue",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "Welcome back, $.Attributes.customerName. We are routing you to our priority support path."
+      },
+      "Identifier": "VIP Greeting",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "Set VIP Route",
+        "Errors": [
+          {
+            "NextAction": "Set VIP Route",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "Welcome back, $.Attributes.customerName. We are routing you to our standard support path."
+      },
+      "Identifier": "Known Greeting",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "Set Known Route",
+        "Errors": [
+          {
+            "NextAction": "Set Known Route",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.customerType"
+      },
+      "Identifier": "Route based",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Set Fallback",
+        "Conditions": [
+          {
+            "NextAction": "VIP Greeting",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "VIP"
+              ]
+            }
+          },
+          {
+            "NextAction": "Known Greeting",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "KNOWN"
+              ]
+            }
+          },
+          {
+            "NextAction": "Get Account Number",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "UNKNOWN"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Set Fallback",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "5",
+        "Text": "We could not find your phone number. If you have an account number, press 1 to continue."
+      },
+      "Identifier": "Get Account Number",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "Set Unknown Route",
+        "Conditions": [
+          {
+            "NextAction": "Set Unknown Route",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "1"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Set Unknown Route",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "Set Unknown Route",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "Set Unknown Route",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:651706765112:function:connect-caller-routing-call-logger",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Log Unknown Call",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "Fallback Simiulated Queue",
+        "Errors": [
+          {
+            "NextAction": "Fallback Simiulated Queue",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "route": "FALLBACK\n",
+          "customerType": "UNKNOWN",
+          "accountNumberEmtered": "1"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set Unknown Route",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Log Unknown Call",
+        "Errors": [
+          {
+            "NextAction": "Log Unknown Call",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "This is a VIP simulated support path, Thank you for calling"
+      },
+      "Identifier": "VIP Simulated Queue",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+        "Errors": [
+          {
+            "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "This is a standard simulated support path, Thank you for calling"
+      },
+      "Identifier": "Known Simulated Queue",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+        "Errors": [
+          {
+            "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "Thank you. We are routing you to our general support path."
+      },
+      "Identifier": "Fallback Simiulated Queue",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+        "Errors": [
+          {
+            "NextAction": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "ec8f8fe3-f750-4acf-bd2d-d069bae61330",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "customerType": "$.External.customerType",
+          "customerName": "$.External.customerName",
+          "lookupStatus": "$.External.lookupStatus",
+          "phoneNumber": "$.External.phoneNumber"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Store Customer Info",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Route based",
+        "Errors": [
+          {
+            "NextAction": "Set Fallback",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "customerType": "UNKNOWN",
+          "route": "FALLBACK",
+          "accountNumberEntered": "\"\""
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set Fallback",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Log Unknown Call",
+        "Errors": [
+          {
+            "NextAction": "Log Unknown Call",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:651706765112:function:connect-caller-routing-customer-lookup",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Customer Lookup",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "Store Customer Info",
+        "Errors": [
+          {
+            "NextAction": "Set Fallback",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "SkipWhenDTMFBufferEnabled": "false",
+        "Text": "Thank you for calling. Please wait while we look up your information."
+      },
+      "Identifier": "Intial Greeting",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "Customer Lookup",
+        "Errors": [
+          {
+            "NextAction": "Customer Lookup",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
