@@ -85,7 +85,7 @@ Example item:
   "phoneNumber": "+16305202420",
   "customerType": "VIP",
   "customerName": "Amritpal Rajput",
-  "accountNumber": "A10001"
+  "accountNumber": "100001"
 }
 ```
 
@@ -227,7 +227,7 @@ Expected result:
   "customerType": "VIP",
   "customerName": "Amritpal Rajput",
   "phoneNumber": "+16305202420",
-  "accountNumber": "A10001"
+  "accountNumber": "100001"
 }
 ```
 
