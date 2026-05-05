@@ -371,10 +371,6 @@ An Amazon Connect service quota increase is currently pending. Once approved, th
 - Lookup or attribute errors route to fallback instead of disconnecting abruptly.
 
 
-<img width="1712" height="308" alt="image" src="https://github.com/user-attachments/assets/ed11aa57-ff43-4f0e-b3ab-4e6c1863f500" />
-
-
-
 ---
 
 ## Known Limitations
@@ -384,6 +380,12 @@ An Amazon Connect service quota increase is currently pending. Once approved, th
 - No frontend dashboard for call logs.
 - No production monitoring or alarms.
 - Contact flow is not fully managed through IaC.
+
+
+
+<img width="1712" height="308" alt="image" src="https://github.com/user-attachments/assets/ed11aa57-ff43-4f0e-b3ab-4e6c1863f500" />
+
+
 
 ---
 
