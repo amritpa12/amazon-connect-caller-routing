@@ -366,7 +366,6 @@ An Amazon Connect service quota increase is currently pending. Once approved, th
 
 - Phone numbers are stored in E.164 format.
 - VIP, Known, and Fallback routing are simulated with prompts instead of real agent queues.
-- Unknown customer account capture is simplified to DTMF option `1`.
 - The contact flow was configured manually in Amazon Connect, while backend infrastructure is managed by CDK.
 - DynamoDB tables use `RemovalPolicy.DESTROY` because this is a demo project.
 - Lookup or attribute errors route to fallback instead of disconnecting abruptly.
@@ -377,9 +376,7 @@ An Amazon Connect service quota increase is currently pending. Once approved, th
 
 - Live call test is pending until Amazon Connect quota approval.
 - No real queues, agents, routing profiles, or hours of operation are configured.
-- Unknown customer path does not capture a full account number.
 - No frontend dashboard for call logs.
-- No automated unit tests.
 - No production monitoring or alarms.
 - Contact flow is not fully managed through IaC.
 
