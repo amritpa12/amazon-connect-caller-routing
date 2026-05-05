@@ -6,5 +6,5 @@ __pycache__/
 *.pyd
 .env
 .env.*
-responses.json
+response.json
 lookup-vip-payload.json
