@@ -51,7 +51,7 @@ amazon-connect-caller-routing/
   requirements.txt
   connect_caller_routing/
     stack.py
-  lambda/
+  lambdas/
     customer_lookup/
       app.py
     call_logger/

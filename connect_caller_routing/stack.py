@@ -45,7 +45,7 @@ class ConnectCallerRoutingStack(Stack):
             function_name="connect-caller-routing-customer-lookup",
             runtime=lambda_.Runtime.PYTHON_3_12,
             handler="app.lambda_handler",
-            code=lambdas_.Code.from_asset("lambda/customer_lookup"),
+            code=lambda_.Code.from_asset("lambdas/customer_lookup"),
             timeout=Duration.seconds(8),
             environment={
                 "CUSTOMERS_TABLE_NAME": customers_table.table_name
@@ -58,7 +58,7 @@ class ConnectCallerRoutingStack(Stack):
             function_name="connect-caller-routing-call-logger",
             runtime=lambda_.Runtime.PYTHON_3_12,
             handler="app.lambda_handler",
-            code=lambdas_.Code.from_asset("lambda/call_logger"),
+            code=lambda_.Code.from_asset("lambdas/call_logger"),
             timeout=Duration.seconds(8),
             environment={
                 "CALL_LOGS_TABLE_NAME": call_logs_table.table_name
